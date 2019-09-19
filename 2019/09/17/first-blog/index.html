@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="爱吃火锅的大蜀黍">
 <meta property="og:description" content="前言近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，最吸引人的是完全免费使用，而且非常稳定。本文依照自己搭建的心得，尽可能简化操作步骤">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-19T01:37:17.398Z">
+<meta property="og:updated_time" content="2019-09-19T08:38:35.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo + github 搭建个人博客">
 <meta name="twitter:description" content="前言近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，最吸引人的是完全免费使用，而且非常稳定。本文依照自己搭建的心得，尽可能简化操作步骤">
@@ -400,7 +400,7 @@
 <h4 id="2-设置网站图标"><a href="#2-设置网站图标" class="headerlink" title="2.设置网站图标"></a>2.设置网站图标</h4><p>进入 themes/主题 文件夹，打开 _config.yml 配置文件，找到 favicon 修改，一般格式为：<code>favicon: 图标地址</code>。（不同主题可能略有差别）</p>
 <h4 id="3-修改并部署后没有效果"><a href="#3-修改并部署后没有效果" class="headerlink" title="3.修改并部署后没有效果"></a>3.修改并部署后没有效果</h4><p>使用 <code>hexo clean</code> 清理后重新部署。</p>
 <h4 id="4-修改语言"><a href="#4-修改语言" class="headerlink" title="4.修改语言"></a>4.修改语言</h4><p>当前使用的主题下查找language文件夹，该文件夹下就是支持的语言</p>
-<h2 id="10-拓展篇-NexT主题"><a href="#10-拓展篇-NexT主题" class="headerlink" title="10.拓展篇(NexT主题)"></a>10.拓展篇(NexT主题)</h2><h3 id="10-1-页脚添加访客人数和总访问量"><a href="#10-1-页脚添加访客人数和总访问量" class="headerlink" title="10.1 页脚添加访客人数和总访问量"></a>10.1 页脚添加访客人数和总访问量</h3><p>1.修改<code>next</code>主题下的_config.yml</p>
+<h2 id="10-拓展篇-NexT主题"><a href="#10-拓展篇-NexT主题" class="headerlink" title="10.拓展篇(NexT主题)"></a>10.拓展篇(NexT主题)</h2><h3 id="10-1-页脚添加访客人数和总访问量"><a href="#10-1-页脚添加访客人数和总访问量" class="headerlink" title="10.1 页脚添加访客人数和总访问量"></a>10.1 页脚添加访客人数和总访问量</h3><p>1.修改<code>next</code>主题下的_config.yml,找到 <code>busuanzi_count</code>，其下的enable修改为true<br>2.全局搜索 <code>busuanzi-counter.swig</code>文件,修改script的src值为<code>//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js</code> <a href="https://blog.csdn.net/stormdony/article/details/82980320" target="_blank" rel="noopener">参考链接</a></p>
 
       
     </div>
@@ -576,10 +576,9 @@
 
 
 
-
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
