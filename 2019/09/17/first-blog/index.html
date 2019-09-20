@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="爱吃火锅的大蜀黍">
 <meta property="og:description" content="前言近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，最吸引人的是完全免费使用，而且非常稳定。本文依照自己搭建的心得，尽可能简化操作步骤">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-20T01:32:15.099Z">
+<meta property="og:updated_time" content="2019-09-20T09:00:48.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo + github 搭建个人博客">
 <meta name="twitter:description" content="前言近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，最吸引人的是完全免费使用，而且非常稳定。本文依照自己搭建的心得，尽可能简化操作步骤">
@@ -440,7 +440,7 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tags文件下添加</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
 
-<h4 id="接入网页在线聊天功能"><a href="#接入网页在线聊天功能" class="headerlink" title="接入网页在线聊天功能"></a>接入网页在线聊天功能</h4>
+
       
     </div>
     
@@ -449,6 +449,35 @@
 
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wpay.jpg" alt="lux 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zpay.jpg" alt="lux 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
@@ -599,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建-git-node"><span class="nav-number">2.</span> <span class="nav-text">环境搭建 (git/node)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接-Github"><span class="nav-number">3.</span> <span class="nav-text">连接 Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH密匙-有密匙可跳过"><span class="nav-number">3.1.</span> <span class="nav-text">创建SSH密匙(有密匙可跳过)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加密匙"><span class="nav-number">3.2.</span> <span class="nav-text">添加密匙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证连接"><span class="nav-number">3.3.</span> <span class="nav-text">验证连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建仓库"><span class="nav-number">4.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化hexo项目"><span class="nav-number">5.</span> <span class="nav-text">初始化hexo项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo以及本地预览服务器"><span class="nav-number">5.1.</span> <span class="nav-text">安装hexo以及本地预览服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo初始化以及本地预览"><span class="nav-number">5.2.</span> <span class="nav-text">hexo初始化以及本地预览</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署-Hexo到-Github-Pages"><span class="nav-number">6.</span> <span class="nav-text">部署 Hexo到 Github Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名-可选"><span class="nav-number">7.</span> <span class="nav-text">绑定域名(可选)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买域名"><span class="nav-number">7.1.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯云解析域名-参考链接"><span class="nav-number">7.2.</span> <span class="nav-text">腾讯云解析域名 参考链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建CNAME文件"><span class="nav-number">7.3.</span> <span class="nav-text">创建CNAME文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预览上传"><span class="nav-number">7.4.</span> <span class="nav-text">预览上传</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题-链接"><span class="nav-number">8.</span> <span class="nav-text">更换主题  链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">9.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题-NexT主题"><span class="nav-number">10.</span> <span class="nav-text">常见问题(NexT主题)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo设置显示文章摘要，首页不显示全文"><span class="nav-number">10.0.1.</span> <span class="nav-text">Hexo设置显示文章摘要，首页不显示全文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置网站图标"><span class="nav-number">10.0.2.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改并部署后没有效果"><span class="nav-number">10.0.3.</span> <span class="nav-text">修改并部署后没有效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改语言"><span class="nav-number">10.0.4.</span> <span class="nav-text">修改语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页脚添加访客人数和总访问量"><span class="nav-number">10.0.5.</span> <span class="nav-text">页脚添加访客人数和总访问量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加标签页，其余同理"><span class="nav-number">10.0.6.</span> <span class="nav-text">添加标签页，其余同理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接入网页在线聊天功能"><span class="nav-number">10.0.7.</span> <span class="nav-text">接入网页在线聊天功能</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建-git-node"><span class="nav-number">2.</span> <span class="nav-text">环境搭建 (git/node)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接-Github"><span class="nav-number">3.</span> <span class="nav-text">连接 Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH密匙-有密匙可跳过"><span class="nav-number">3.1.</span> <span class="nav-text">创建SSH密匙(有密匙可跳过)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加密匙"><span class="nav-number">3.2.</span> <span class="nav-text">添加密匙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证连接"><span class="nav-number">3.3.</span> <span class="nav-text">验证连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建仓库"><span class="nav-number">4.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化hexo项目"><span class="nav-number">5.</span> <span class="nav-text">初始化hexo项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo以及本地预览服务器"><span class="nav-number">5.1.</span> <span class="nav-text">安装hexo以及本地预览服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo初始化以及本地预览"><span class="nav-number">5.2.</span> <span class="nav-text">hexo初始化以及本地预览</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署-Hexo到-Github-Pages"><span class="nav-number">6.</span> <span class="nav-text">部署 Hexo到 Github Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名-可选"><span class="nav-number">7.</span> <span class="nav-text">绑定域名(可选)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买域名"><span class="nav-number">7.1.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯云解析域名-参考链接"><span class="nav-number">7.2.</span> <span class="nav-text">腾讯云解析域名 参考链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建CNAME文件"><span class="nav-number">7.3.</span> <span class="nav-text">创建CNAME文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预览上传"><span class="nav-number">7.4.</span> <span class="nav-text">预览上传</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题-链接"><span class="nav-number">8.</span> <span class="nav-text">更换主题  链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">9.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题-NexT主题"><span class="nav-number">10.</span> <span class="nav-text">常见问题(NexT主题)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo设置显示文章摘要，首页不显示全文"><span class="nav-number">10.0.1.</span> <span class="nav-text">Hexo设置显示文章摘要，首页不显示全文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置网站图标"><span class="nav-number">10.0.2.</span> <span class="nav-text">设置网站图标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改并部署后没有效果"><span class="nav-number">10.0.3.</span> <span class="nav-text">修改并部署后没有效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改语言"><span class="nav-number">10.0.4.</span> <span class="nav-text">修改语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页脚添加访客人数和总访问量"><span class="nav-number">10.0.5.</span> <span class="nav-text">页脚添加访客人数和总访问量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加标签页，其余同理"><span class="nav-number">10.0.6.</span> <span class="nav-text">添加标签页，其余同理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -813,7 +842,7 @@
   
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
     });
@@ -823,7 +852,7 @@
         notify: false,
         appId: '7esUDgpUcpU5AtukcLKMWQYE-gzGzoHsz',
         appKey: 'fH3FaA9bAeVU2yJDbFQN4hH9',
-        placeholder: 'Just go go',
+        placeholder: '',
         avatar:'mm',
         guest_info:guest,
         pageSize:'10' || 10,
