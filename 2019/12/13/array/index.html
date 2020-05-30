@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言JavaScript数组方法速查手册极简版中共收了32个数组的常用方法和属性，并根据方法的用途进行重新排序和分类，在文中简要的介绍了方法作用和用例说明,改变元素组的方法reverse,pop,push,shift,unshift,splice">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript数组方法速查手册极简版">
+<meta property="og:url" content="http://yoursite.com/2019/12/13/array/index.html">
+<meta property="og:site_name" content="爱吃火锅的大蜀黍">
+<meta property="og:description" content="前言JavaScript数组方法速查手册极简版中共收了32个数组的常用方法和属性，并根据方法的用途进行重新排序和分类，在文中简要的介绍了方法作用和用例说明,改变元素组的方法reverse,pop,push,shift,unshift,splice">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-14T02:20:14.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript数组方法速查手册极简版">
+<meta name="twitter:description" content="前言JavaScript数组方法速查手册极简版中共收了32个数组的常用方法和属性，并根据方法的用途进行重新排序和分类，在文中简要的介绍了方法作用和用例说明,改变元素组的方法reverse,pop,push,shift,unshift,splice">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/13/array/">
+
+
+
+
+
+  <title>JavaScript数组方法速查手册极简版 | 爱吃火锅的大蜀黍</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b60e1550afbc69cba1c2510163ab33c4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">爱吃火锅的大蜀黍</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/13/array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lux">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/lf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="爱吃火锅的大蜀黍">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript数组方法速查手册极简版</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-13T15:40:49+08:00">
+                2019-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/13/array/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/13/array/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JavaScript数组方法速查手册极简版中共收了32个数组的常用方法和属性，并根据方法的用途进行重新排序和分类，在文中简要的介绍了方法作用和用例说明,改变元素组的方法<code>reverse,pop,push,shift,unshift,splice</code></p>
+<a id="more"></a>
+
+<h2 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a>类型判断</h2><p>Array.isArray() 数组类型判定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.isArray([1, 2]));   // 输出 true</span><br><span class="line">console.log(Array.isArray(&#123;num: 123&#125;));   //输出 false</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><h3 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of"></a>Array.of</h3><p>从可变数量的参数创建数组，不管参数的数量或类型如何。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.of(3));    // 输出 [3]</span><br><span class="line">console.log(Array.of(1,2,3));   // 输出 [1,2,3]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h3><p>用类数组或可迭代对象创建新数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.from(&apos;abcd&apos;));  // 输出 [ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]</span><br><span class="line">console.log(Array.from([1, 2, 3], x =&gt; x + 1));  // 输出 [ 2, 3, 4 ]</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h2><h3 id="find-按函数查找"><a href="#find-按函数查找" class="headerlink" title="find-按函数查找"></a>find-按函数查找</h3><p>找到第一个满足检测函数条件的元素，并返回该元素，没找到则返回 undefined。</p>
+<h3 id="findIndex-按函数查找"><a href="#findIndex-按函数查找" class="headerlink" title="findIndex-按函数查找"></a>findIndex-按函数查找</h3><p>找到第一个满足检测函数条件的元素，并返回该元素索引。找不到返回-1。</p>
+<h3 id="indexOf-按元素值查找"><a href="#indexOf-按元素值查找" class="headerlink" title="indexOf-按元素值查找"></a>indexOf-按元素值查找</h3><p>查找元素并返回元素索引值，找不到返回-1<br>第一个参数代表查找的值,第二个参数表示查找的起始位置。</p>
+<h3 id="lastIndexOf-按元素值查找"><a href="#lastIndexOf-按元素值查找" class="headerlink" title="lastIndexOf-按元素值查找"></a>lastIndexOf-按元素值查找</h3><p>从后向前查找元素并返回元素索引值，找不到返回 -1。</p>
+<h3 id="includes-值包含检测"><a href="#includes-值包含检测" class="headerlink" title="includes-值包含检测"></a>includes-值包含检测</h3><p>值包含检测，如包含返回 true，不包含返回false。</p>
+<h3 id="some-函数包含检测"><a href="#some-函数包含检测" class="headerlink" title="some-函数包含检测"></a>some-函数包含检测</h3><p>检测数组中是否有元素可以通过检测函数验证,如包含返回 true，不包含返回false。存在就终止循环</p>
+<h3 id="every-函数完全检测"><a href="#every-函数完全检测" class="headerlink" title="every-函数完全检测"></a>every-函数完全检测</h3><p>检测数组中是否所有元素都可以通过检测函数验证。如全部符合返回 true，否则false</p>
+<h2 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h2><h3 id="push-尾部添加"><a href="#push-尾部添加" class="headerlink" title="push-尾部添加"></a>push-尾部添加</h3><p>在尾部添加一个或多个元素，返回数组的新长度</p>
+<h3 id="unshift-头部添加"><a href="#unshift-头部添加" class="headerlink" title="unshift-头部添加"></a>unshift-头部添加</h3><p>在头部添加一个或多个元素，并返回数组的新长度</p>
+<h2 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h2><h3 id="pop-尾部删除"><a href="#pop-尾部删除" class="headerlink" title="pop-尾部删除"></a>pop-尾部删除</h3><p>尾部删除一个元素，并返回该元素</p>
+<h3 id="shift-头部删除"><a href="#shift-头部删除" class="headerlink" title="shift-头部删除"></a>shift-头部删除</h3><p>从头部删除一个元素，并返回该元素</p>
+<h2 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h2><p>添加、替换、删除元素。会改变<code>原数组</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [ &apos;a&apos;, &apos;c&apos;, &apos;d&apos; ];</span><br><span class="line">array1.splice( 1, 0, &apos;b&apos;);</span><br><span class="line">console.log(array1);    // 输出 [ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]</span><br><span class="line">array1.splice(1,1);</span><br><span class="line">console.log(array1);    // 输出 [ &quot;a&quot;, &quot;c&quot;, &quot;d&quot; ]</span><br><span class="line">array1.splice(1,1,&apos;bb&apos;,&apos;cc&apos;);</span><br><span class="line">console.log(array1);    // 输出 [ &quot;a&quot;, &quot;bb&quot;, &quot;cc&quot;, &quot;d&quot; ]</span><br></pre></td></tr></table></figure>
+
+<p><code>array.splice(start,deleteCount,[item1[, item2[, ...]]]])</code></p>
+<ul>
+<li>参数 start：表示替换的位置</li>
+<li>参数 deleteCount ：表示删除元素的数量</li>
+<li>参数 item1… ： 表示添加的元素</li>
+</ul>
+<h2 id="顺序相关"><a href="#顺序相关" class="headerlink" title="顺序相关"></a>顺序相关</h2><h3 id="sort-排序"><a href="#sort-排序" class="headerlink" title="sort-排序"></a>sort-排序</h3><p>数组排序，改变<code>原数组</code>,支持自定义规则排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [ 4, 3, 10, 2 ];</span><br><span class="line">console.log(array1.sort());    // 输出 [ 10, 2, 3, 4 ]</span><br><span class="line">console.log(array1.sort((x1, x2) =&gt; x1 &gt; x2));    // 输出 [ 2, 3, 4, 10 ]</span><br></pre></td></tr></table></figure>
+
+<h3 id="reverse-反序"><a href="#reverse-反序" class="headerlink" title="reverse-反序"></a>reverse-反序</h3><p>倒置数组，并返回<code>新数组</code>。会改变<code>原数组</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var sourceArray= [ &apos;a&apos;, &apos;b&apos;, &apos;c&apos; ];</span><br><span class="line">var reverseArray = sourceArray.reverse();</span><br><span class="line">console.log(reverseArray);    // 输出 [ &quot;c&quot;, &quot;b&quot;, &quot;a&quot; ]</span><br><span class="line">console.log(sourceArray == reverseArray);    // 输出 true</span><br></pre></td></tr></table></figure>
+
+<h2 id="遍历迭代"><a href="#遍历迭代" class="headerlink" title="遍历迭代"></a>遍历迭代</h2><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><p>forEach按升序为数组中含有效值的每一项执行一次 callback 函数，那些已删除或者未初始化的项将被跳过（例如在稀疏数组上）,遍历数组中的元素，并执行回调函数，返回undefined<br><code>注:无法中断(只能抛出异常)</code><br><code>arr.forEach(callback(currentValue , index  array),thisArg );</code></p>
+<ul>
+<li>currentValue：数组中正在处理的当前元素。</li>
+<li>index(可选) ：表示删除元素的数量</li>
+<li>array(可选) ： 表示添加的元素</li>
+<li>thisArg(可选) ： 当执行回调函数 callback 时，用作 this 的值</li>
+</ul>
+<h2 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+    
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+    </div>
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wpay.jpg" alt="lux 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zpay.jpg" alt="lux 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/17/first-blog/" rel="next" title="hexo + github 搭建个人博客">
+                <i class="fa fa-chevron-left"></i> hexo + github 搭建个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/25/design-mode/" rel="prev" title="JavaScript设计模式">
+                JavaScript设计模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/lf.jpg" alt="lux">
+            
+              <p class="site-author-name" itemprop="name">lux</p>
+              <p class="site-description motion-element" itemprop="description">把你的名字写在烟上吸进肺里，让你保持离我心脏最近的距离</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型判断"><span class="nav-number">2.</span> <span class="nav-text">类型判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数组"><span class="nav-number">3.</span> <span class="nav-text">创建数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-of"><span class="nav-number">3.1.</span> <span class="nav-text">Array.of</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-from"><span class="nav-number">3.2.</span> <span class="nav-text">Array.from</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找元素"><span class="nav-number">4.</span> <span class="nav-text">查找元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#find-按函数查找"><span class="nav-number">4.1.</span> <span class="nav-text">find-按函数查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#findIndex-按函数查找"><span class="nav-number">4.2.</span> <span class="nav-text">findIndex-按函数查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-按元素值查找"><span class="nav-number">4.3.</span> <span class="nav-text">indexOf-按元素值查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lastIndexOf-按元素值查找"><span class="nav-number">4.4.</span> <span class="nav-text">lastIndexOf-按元素值查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#includes-值包含检测"><span class="nav-number">4.5.</span> <span class="nav-text">includes-值包含检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-函数包含检测"><span class="nav-number">4.6.</span> <span class="nav-text">some-函数包含检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#every-函数完全检测"><span class="nav-number">4.7.</span> <span class="nav-text">every-函数完全检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加元素"><span class="nav-number">5.</span> <span class="nav-text">添加元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#push-尾部添加"><span class="nav-number">5.1.</span> <span class="nav-text">push-尾部添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unshift-头部添加"><span class="nav-number">5.2.</span> <span class="nav-text">unshift-头部添加</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除元素"><span class="nav-number">6.</span> <span class="nav-text">删除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pop-尾部删除"><span class="nav-number">6.1.</span> <span class="nav-text">pop-尾部删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shift-头部删除"><span class="nav-number">6.2.</span> <span class="nav-text">shift-头部删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替换元素"><span class="nav-number">7.</span> <span class="nav-text">替换元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序相关"><span class="nav-number">8.</span> <span class="nav-text">顺序相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-排序"><span class="nav-number">8.1.</span> <span class="nav-text">sort-排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse-反序"><span class="nav-number">8.2.</span> <span class="nav-text">reverse-反序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历迭代"><span class="nav-number">9.</span> <span class="nav-text">遍历迭代</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach"><span class="nav-number">9.1.</span> <span class="nav-text">forEach</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并"><span class="nav-number">10.</span> <span class="nav-text">合并</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lux</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+ 
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7esUDgpUcpU5AtukcLKMWQYE-gzGzoHsz',
+        appKey: 'fH3FaA9bAeVU2yJDbFQN4hH9',
+        placeholder: '',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script type="text/javascript" src="/js/src/funnyTitle.js"></script>
+</body>
+</html>

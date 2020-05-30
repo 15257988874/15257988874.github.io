@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -87,7 +94,7 @@
 <meta property="og:site_name" content="爱吃火锅的大蜀黍">
 <meta property="og:description" content="前言近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，最吸引人的是完全免费使用，而且非常稳定。本文依照自己搭建的心得，尽可能简化操作步骤">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-20T09:00:48.901Z">
+<meta property="og:updated_time" content="2019-09-25T01:05:19.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo + github 搭建个人博客">
 <meta name="twitter:description" content="前言近些年来很多用户都喜欢使用 GitHub Pages 来搭建 Hexo 静态博客网站，最吸引人的是完全免费使用，而且非常稳定。本文依照自己搭建的心得，尽可能简化操作步骤">
@@ -197,16 +204,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
           </a>
         </li>
       
@@ -396,15 +393,14 @@
 <h3 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h3><p>打开 Git Bash，输入 <code>ssh -T git@github.com</code> 出现 “Are you sure……”，输入 yes 回车确认。显示 “Hi xxx! You’ve successfully……” 即连接成功。</p>
 <h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p>GitHub 主页右上角加号 -&gt; New repository</p>
 <ul>
-<li>Repository name中输入 <code>用户名.github.io</code>(切记必须与当前登录的用户名一致,o(╥﹏╥)自己弄的时候没看仔细，在这坑了好久)</li>
+<li>Repository name中输入 <code>用户名.github.io</code>(切记必须与当前登录的用户名一致)</li>
 <li>勾选 ‘Initialize this repository with a README’</li>
 <li>Description选填</li>
 </ul>
 <p>填好后点击 Create repository,创建后默认自动启用https,地址为 <code>https://用户名.github.io</code></p>
 <h2 id="初始化hexo项目"><a href="#初始化hexo项目" class="headerlink" title="初始化hexo项目"></a>初始化hexo项目</h2><p>新建一个文件夹用来存放hexo的程序,例如hexo-blog，打开文件夹，git bash here</p>
 <h3 id="安装hexo以及本地预览服务器"><a href="#安装hexo以及本地预览服务器" class="headerlink" title="安装hexo以及本地预览服务器"></a>安装hexo以及本地预览服务器</h3><p><code>npm i hexo-cli -g</code>,安装时间有点久,<strong>耐心等待一下</strong></p>
-<p><code>npm  i hexo-server  -S</code>,本地预览服务器</p>
-<h3 id="hexo初始化以及本地预览"><a href="#hexo初始化以及本地预览" class="headerlink" title="hexo初始化以及本地预览"></a>hexo初始化以及本地预览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h3 id="hexo初始化以及本地预览"><a href="#hexo初始化以及本地预览" class="headerlink" title="hexo初始化以及本地预览"></a>hexo初始化以及本地预览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line">npm  i hexo-server  -S,本地预览服务器</span><br></pre></td></tr></table></figure>
 
 <p>完成后依次输入以下命令，<strong>启用本地服务器进行预览</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
@@ -449,6 +445,15 @@
 
     
 
+    <div>
+    
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+    </div>
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -495,6 +500,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/13/array/" rel="prev" title="JavaScript数组方法速查手册极简版">
+                JavaScript数组方法速查手册极简版 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -573,7 +594,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -584,7 +605,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -595,7 +616,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -648,7 +669,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -667,7 +688,7 @@
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
+ 
 
 
 
@@ -733,6 +754,8 @@
   
 
 
+  
+
 
 
 
@@ -771,6 +794,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
