@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="yarn,">
+  <meta name="keywords" content="JavaScript,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="yarn  关于 yarn 的入门以及它的简介，可以参考这篇文章 或者官网">
-<meta name="keywords" content="yarn">
+<meta name="description" content="一、let/constlet 不存在变量提升 不允许重复声明 暂时性死区(变量只在当前的块级作用域内有效)  const 对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yarn">
-<meta property="og:url" content="http://yoursite.com/2020/06/08/yarn/index.html">
+<meta property="og:title" content="es6">
+<meta property="og:url" content="http://yoursite.com/2020/07/11/es6/index.html">
 <meta property="og:site_name" content="爱吃火锅的大蜀黍">
-<meta property="og:description" content="yarn  关于 yarn 的入门以及它的简介，可以参考这篇文章 或者官网">
+<meta property="og:description" content="一、let/constlet 不存在变量提升 不允许重复声明 暂时性死区(变量只在当前的块级作用域内有效)  const 对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-16T07:28:24.456Z">
+<meta property="og:updated_time" content="2020-07-13T01:42:11.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yarn">
-<meta name="twitter:description" content="yarn  关于 yarn 的入门以及它的简介，可以参考这篇文章 或者官网">
+<meta name="twitter:title" content="es6">
+<meta name="twitter:description" content="一、let/constlet 不存在变量提升 不允许重复声明 暂时性死区(变量只在当前的块级作用域内有效)  const 对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/06/08/yarn/">
+  <link rel="canonical" href="http://yoursite.com/2020/07/11/es6/">
 
 
 
 
 
-  <title>yarn | 爱吃火锅的大蜀黍</title>
+  <title>es6 | 爱吃火锅的大蜀黍</title>
   
 
 
@@ -270,7 +270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/08/yarn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/11/es6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lux">
@@ -287,7 +287,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">yarn</h1>
+          <h1 class="post-title" itemprop="name headline">es6</h1>
         
 
         <div class="post-meta">
@@ -299,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-08T11:48:19+08:00">
-                2020-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-11T09:50:17+08:00">
+                2020-07-11
               </time>
             
 
@@ -322,8 +322,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/yarn/" itemprop="url" rel="index">
-                    <span itemprop="name">yarn</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -340,8 +340,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/06/08/yarn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/08/yarn/" itemprop="commentCount"></span>
+                <a href="/2020/07/11/es6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/11/es6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,29 +374,18 @@
       
 
       
-        <blockquote>
-<p>yarn</p>
-</blockquote>
-<p>关于 yarn 的入门以及它的简介，可以参考这篇<a href="https://www.jianshu.com/p/f1d96bdc545b" target="_blank" rel="noopener">文章</a> 或者<a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener">官网</a></p>
-<a id="more"></a>
+        <h3 id="一、let-const"><a href="#一、let-const" class="headerlink" title="一、let/const"></a>一、let/const</h3><h4 id="let"><a href="#let" class="headerlink" title="let"></a><strong>let</strong></h4><ul>
+<li>不存在变量提升</li>
+<li>不允许重复声明</li>
+<li>暂时性死区(变量只在当前的块级作用域内有效)</li>
+</ul>
+<h4 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h4><ul>
+<li>对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了</li>
+</ul>
+<h3 id="二、变量的解构赋值"><a href="#二、变量的解构赋值" class="headerlink" title="二、变量的解构赋值"></a>二、变量的解构赋值</h3><p>注:结构赋值内部使用严格相等运算符（===），判断一个位置是否有值。所以，只有当一个数组成员严格等于 undefined，默认值才会生效</p>
+<h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.基础</span><br><span class="line">let [a,[b],[[c]]]  =  [1,[2],[[3]]]</span><br><span class="line">// a = 1 , b = 2 ,c = 3</span><br><span class="line"></span><br><span class="line">2.默认值</span><br><span class="line">let [x, y = &apos;b&apos;] = [&apos;a&apos;];</span><br><span class="line">// x=&apos;a&apos;, y=&apos;b&apos;</span><br></pre></td></tr></table></figure>
 
-<h4 id="安装全部依赖"><a href="#安装全部依赖" class="headerlink" title="安装全部依赖"></a>安装全部依赖</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">或者</span><br><span class="line">yarn</span><br></pre></td></tr></table></figure>
-
-<h4 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// yarn 默认是不建议全局安装的，因为全局安装的包无法通过.lock来捕获到，当你的项目移到别的地方运行的时候就可能出现问题</span><br><span class="line"></span><br><span class="line">yarn global add webpack</span><br><span class="line"></span><br><span class="line">yarn global upgrade webpack</span><br><span class="line"></span><br><span class="line">yarn global remove webpack</span><br></pre></td></tr></table></figure>
-
-<h5 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yarn install pageage-name 安装最新版本的包</span><br><span class="line">yarn add package-name@1.2.3  安装指定版本的包</span><br><span class="line"></span><br><span class="line">//添加dev的依赖</span><br><span class="line">yarn add less less-loader --dev</span><br><span class="line">或者</span><br><span class="line">yarn add less less-loader --D</span><br></pre></td></tr></table></figure>
-
-<h4 id="查看包的信息"><a href="#查看包的信息" class="headerlink" title="查看包的信息"></a>查看包的信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yarn info pageage-name</span><br><span class="line"></span><br><span class="line">yarn info pageage-name --json  json化一下</span><br><span class="line"></span><br><span class="line">yarn info pageage-name@15.3.0  查看指定版本</span><br></pre></td></tr></table></figure>
-
-<h4 id="移除依赖包"><a href="#移除依赖包" class="headerlink" title="移除依赖包"></a>移除依赖包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn remove pageage-name</span><br></pre></td></tr></table></figure>
-
-<h4 id="更新依赖包"><a href="#更新依赖包" class="headerlink" title="更新依赖包"></a>更新依赖包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn upgrade  全部更新</span><br><span class="line">yarn upgrade left-pad 更新某个包</span><br><span class="line">yarn upgrade left-pad@^1.0.0 更新某个包到指定版本</span><br></pre></td></tr></table></figure>
-
-<h4 id="查询已过时的安装包"><a href="#查询已过时的安装包" class="headerlink" title="查询已过时的安装包"></a>查询已过时的安装包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn outdated</span><br></pre></td></tr></table></figure>
-
-<h4 id="全局缓冲"><a href="#全局缓冲" class="headerlink" title="全局缓冲"></a>全局缓冲</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yarn cache list 列出已缓存的每个包</span><br><span class="line"></span><br><span class="line">yarn cache dir  当前的 yarn 全局缓存在哪里</span><br><span class="line"></span><br><span class="line">yarn cache clean  运行此命令将清除全局缓存</span><br><span class="line"></span><br><span class="line">yarn config set cache-folder &lt;path&gt; 配置缓存目录</span><br></pre></td></tr></table></figure>
-
-<h4 id="启动-打包"><a href="#启动-打包" class="headerlink" title="启动/打包"></a>启动/打包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn dev</span><br></pre></td></tr></table></figure>
+<h4 id="对象的结构赋值"><a href="#对象的结构赋值" class="headerlink" title="对象的结构赋值"></a>对象的结构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.基础</span><br><span class="line">const &#123; log &#125; = console;</span><br><span class="line">log(&apos;hello&apos;)</span><br><span class="line"></span><br><span class="line">2.默认值</span><br><span class="line">var &#123;x, y = 5&#125; = &#123;x: 1&#125;;</span><br><span class="line">// x = 1 , y = 5</span><br></pre></td></tr></table></figure>
 
 
       
@@ -453,7 +442,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/yarn/" rel="tag"># yarn</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -466,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/30/typescript/" rel="next" title="typescript入门">
-                <i class="fa fa-chevron-left"></i> typescript入门
+              <a href="/2020/07/07/functional/" rel="next" title="函数式编程">
+                <i class="fa fa-chevron-left"></i> 函数式编程
               </a>
             
           </div>
@@ -476,8 +465,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/07/functional/" rel="prev" title="函数式编程">
-                函数式编程 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/15/flex/" rel="prev" title="flex">
+                flex <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -615,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装全部依赖"><span class="nav-number">1.</span> <span class="nav-text">安装全部依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局安装"><span class="nav-number">2.</span> <span class="nav-text">全局安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装依赖包"><span class="nav-number">2.1.</span> <span class="nav-text">安装依赖包</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看包的信息"><span class="nav-number">3.</span> <span class="nav-text">查看包的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除依赖包"><span class="nav-number">4.</span> <span class="nav-text">移除依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新依赖包"><span class="nav-number">5.</span> <span class="nav-text">更新依赖包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询已过时的安装包"><span class="nav-number">6.</span> <span class="nav-text">查询已过时的安装包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局缓冲"><span class="nav-number">7.</span> <span class="nav-text">全局缓冲</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动-打包"><span class="nav-number">8.</span> <span class="nav-text">启动/打包</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、let-const"><span class="nav-number">1.</span> <span class="nav-text">一、let/const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let"><span class="nav-number">1.1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const"><span class="nav-number">1.2.</span> <span class="nav-text">const</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、变量的解构赋值"><span class="nav-number">2.</span> <span class="nav-text">二、变量的解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组的解构赋值"><span class="nav-number">2.1.</span> <span class="nav-text">数组的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的结构赋值"><span class="nav-number">2.2.</span> <span class="nav-text">对象的结构赋值</span></a></li></ol></li></ol></div>
             
 
           </div>
