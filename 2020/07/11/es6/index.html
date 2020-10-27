@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="爱吃火锅的大蜀黍">
 <meta property="og:description" content="es6">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-16T07:35:02.275Z">
+<meta property="og:updated_time" content="2020-07-20T08:17:26.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6">
 <meta name="twitter:description" content="es6">
@@ -379,18 +379,94 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="一、let-const"><a href="#一、let-const" class="headerlink" title="一、let/const"></a>一、let/const</h3><h4 id="let"><a href="#let" class="headerlink" title="let"></a><strong>let</strong></h4><ul>
+<h3 id="一、let-const"><a href="#一、let-const" class="headerlink" title="一、let/const"></a>一、let/const</h3><h4 id="1-let"><a href="#1-let" class="headerlink" title="1.let"></a>1.let</h4><ul>
 <li>不存在变量提升</li>
 <li>不允许重复声明</li>
 <li>暂时性死区(变量只在当前的块级作用域内有效)</li>
 </ul>
-<h4 id="const"><a href="#const" class="headerlink" title="const"></a><strong>const</strong></h4><ul>
-<li>对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了</li>
-</ul>
-<h3 id="二、变量的解构赋值"><a href="#二、变量的解构赋值" class="headerlink" title="二、变量的解构赋值"></a>二、变量的解构赋值</h3><p>注:结构赋值内部使用严格相等运算符（===），判断一个位置是否有值。所以，只有当一个数组成员严格等于 undefined，默认值才会生效</p>
-<h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.基础</span><br><span class="line">let [a,[b],[[c]]]  =  [1,[2],[[3]]]</span><br><span class="line">// a = 1 , b = 2 ,c = 3</span><br><span class="line"></span><br><span class="line">2.默认值</span><br><span class="line">let [x, y = &apos;b&apos;] = [&apos;a&apos;];</span><br><span class="line">// x=&apos;a&apos;, y=&apos;b&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="2-const"><a href="#2-const" class="headerlink" title="2.const"></a>2.const</h4><blockquote>
+<p>对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了</p>
+</blockquote>
+<h3 id="二、变量的解构赋值"><a href="#二、变量的解构赋值" class="headerlink" title="二、变量的解构赋值"></a>二、变量的解构赋值</h3><blockquote>
+<p>注:结构赋值内部使用严格相等运算符（===），判断一个位置是否有值。所以，只有当一个数组成员严格等于 undefined，默认值才会生效</p>
+</blockquote>
+<h4 id="1-数组的解构赋值"><a href="#1-数组的解构赋值" class="headerlink" title="1.数组的解构赋值"></a>1.数组的解构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.基础</span><br><span class="line">let [a,[b],[[c]]]  =  [1,[2],[[3]]]</span><br><span class="line">// a = 1 , b = 2 ,c = 3</span><br><span class="line"></span><br><span class="line">2.默认值</span><br><span class="line">let [x, y = &apos;b&apos;] = [&apos;a&apos;];</span><br><span class="line">// x=&apos;a&apos;, y=&apos;b&apos;</span><br></pre></td></tr></table></figure>
 
-<h4 id="对象的结构赋值"><a href="#对象的结构赋值" class="headerlink" title="对象的结构赋值"></a>对象的结构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.基础</span><br><span class="line">const &#123; log &#125; = console;</span><br><span class="line">log(&apos;hello&apos;)</span><br><span class="line"></span><br><span class="line">2.默认值</span><br><span class="line">var &#123;x, y = 5&#125; = &#123;x: 1&#125;;</span><br><span class="line">// x = 1 , y = 5</span><br></pre></td></tr></table></figure>
+<h4 id="2-对象的结构赋值"><a href="#2-对象的结构赋值" class="headerlink" title="2.对象的结构赋值"></a>2.对象的结构赋值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.基础</span><br><span class="line">const &#123; log &#125; = console;</span><br><span class="line">log(&apos;hello&apos;)</span><br><span class="line"></span><br><span class="line">2.默认值</span><br><span class="line">var &#123;x, y = 5&#125; = &#123;x: 1&#125;;</span><br><span class="line">// x = 1 , y = 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="九、Module-的语法"><a href="#九、Module-的语法" class="headerlink" title="九、Module 的语法"></a>九、Module 的语法</h3><blockquote>
+<p>与 AMD,CommonJS 语法不同的是,es6 模块注重静态化,使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。比如，CommonJS 模块就是对象，输入时必须查找对象属性(前 2 者运行时加载,后者编译时加载)。由于 ES6 模块是编译时加载(静态加载)，使得静态分析成为可能。有了它，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型检验（type system）这些只能靠静态分析实现的功能。</p>
+</blockquote>
+<h4 id="1-export"><a href="#1-export" class="headerlink" title="1.export"></a>1.export</h4><blockquote>
+<p><code>export</code> 命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系</p>
+</blockquote>
+<ul>
+<li>输出变量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export const A = &apos;a&apos;;</span><br><span class="line">export const B = &apos;b&apos;;</span><br><span class="line"></span><br><span class="line">const A = &apos;a&apos;</span><br><span class="line">const B = &apos;b&apos;</span><br><span class="line">export &#123; A , B &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出函数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export function A ()&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出重命名</span><br><span class="line">function B()&#123;&#125;</span><br><span class="line">export &#123; B as hello ,  B as hello2 &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出类</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export Class A &#123;</span><br><span class="line">  constructor()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-import"><a href="#2-import" class="headerlink" title="2.import"></a>2.import</h4><blockquote>
+<p><code>import</code>静态执行,所以不能使用表达式和语句。 <code>import</code> 输入的变量都是只读的(对象除外,输入的变量不建议修改)</p>
+</blockquote>
+<ul>
+<li>基础</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">export function A ()&#123;&#125;</span><br><span class="line">export function B ()&#123;&#125;</span><br><span class="line"></span><br><span class="line">//main.js</span><br><span class="line">import &#123;A,B&#125; from &apos;./util&apos;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>默认</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">export default function()&#123;&#125;</span><br><span class="line"></span><br><span class="line">//main.js</span><br><span class="line">import A from &apos;./util&apos;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>混合</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">export function A ()&#123;&#125;</span><br><span class="line">export function B ()&#123;&#125;</span><br><span class="line">export default function()&#123;&#125;</span><br><span class="line"></span><br><span class="line">//main.js</span><br><span class="line">import C,&#123;A,B&#125; from &apos;./util&apos;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-模块的整体加载"><a href="#3-模块的整体加载" class="headerlink" title="3.模块的整体加载"></a>3.模块的整体加载</h4><blockquote>
+<p>除了指定加载某个输出值，还可以使用整体加载，即用星号（*）指定一个对象，所有输出值都加载在这个对象上面</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">export function A ()&#123;&#125;</span><br><span class="line">export function B ()&#123;&#125;</span><br><span class="line"></span><br><span class="line">//main.js</span><br><span class="line"></span><br><span class="line">import * as util from &apos;./util&apos;</span><br><span class="line">util.A()</span><br><span class="line"></span><br><span class="line">注:模块整体加载所在的那个对象（上例是util），应该是可以静态分析的，所以不允许运行时改变。下面的写法都是不允许的。</span><br><span class="line">util.A = function()&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-export-default"><a href="#4-export-default" class="headerlink" title="4.export default"></a>4.export default</h4><blockquote>
+<p><code>export default</code> 命令其实只是输出一个叫做 default 的变量，所以它后面不能跟变量声明语句</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">export default function () &#123;</span><br><span class="line">  console.log(&apos;foo&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//main.js</span><br><span class="line">import A from &apos;./util&apos;</span><br><span class="line">A()</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-export-和-import-的复合写法"><a href="#5-export-和-import-的复合写法" class="headerlink" title="5.export 和 import 的复合写法"></a>5.export 和 import 的复合写法</h4><blockquote>
+<p>如果在一个模块之中，先输入后输出同一个模块，<code>import</code>语句可以与<code>export</code>语句写在一起。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export &#123;A,B&#125; from &apos;./util&apos;</span><br><span class="line">//等价于</span><br><span class="line"></span><br><span class="line">import &#123;A,B&#125; from &apos;./util&apos;</span><br><span class="line">export &#123;A,B&#125;</span><br><span class="line"></span><br><span class="line">注:写成一行以后，A和B实际上并没有被导入当前模块，只是相当于对外转发了这两个接口，导致当前模块不能直接使用A和B。</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-模块的继承"><a href="#6-模块的继承" class="headerlink" title="6.模块的继承"></a>6.模块的继承</h4><blockquote>
+<p><code>export *</code>，表示再输出指定模块的所有属性和方法。注意，<code>export *</code>命令会忽略指定模块的 default 方法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//math.js</span><br><span class="line">export * from &apos;./util&apos;</span><br><span class="line">export const PI = 3.14</span><br><span class="line">export default function (x)&#123;</span><br><span class="line">  return Math.exp(x)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//main.js</span><br><span class="line">import * as math from &apos;/math&apos;</span><br><span class="line">import exp from &apos;./math&apos;</span><br><span class="line"></span><br><span class="line">console.log(exp(math.e))</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-跨模块常量"><a href="#7-跨模块常量" class="headerlink" title="7.跨模块常量"></a>7.跨模块常量</h4><ul>
+<li>常量不多的情况</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//constant.js</span><br><span class="line"></span><br><span class="line">export const A = &apos;a&apos;;</span><br><span class="line">export const B = &apos;b&apos;;</span><br><span class="line">export const C = &apos;c&apos;;</span><br><span class="line"></span><br><span class="line">//A.js</span><br><span class="line">import * as constant from &apos;./constant&apos;</span><br><span class="line">console.log(constant.A,constant.B,constant.C)</span><br><span class="line"></span><br><span class="line">//B.js</span><br><span class="line">import &#123;A,B&#125; from &apos;./constant&apos;</span><br><span class="line">console.log(constant.A,constant.BC)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常量较多的时候,建议分模块存储常量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//constants/db.js</span><br><span class="line">export const db = &#123;</span><br><span class="line">  url: &apos;http://my.couchdbserver.local:5984&apos;,</span><br><span class="line">  admin_username: &apos;admin&apos;,</span><br><span class="line">  admin_password: &apos;admin passwor</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//constants/user.js</span><br><span class="line">export const user = [&apos;root&apos;,&apos;admin&apos;,&apos;jack&apos;]</span><br><span class="line"></span><br><span class="line">// constants/index.js</span><br><span class="line">export * from &apos;./db&apos;</span><br><span class="line">export * from &apos;./user&apos;</span><br><span class="line"></span><br><span class="line">//使用</span><br><span class="line">import &#123;db, users&#125; from &apos;./constants/index&apos;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-import"><a href="#8-import" class="headerlink" title="8.import()"></a>8.import()</h4><blockquote>
+<p>用于动态引入模块,返回一个 Promise 对象</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">const path = &apos;./&apos; + fileName;</span><br><span class="line">const myModual = require(path);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const main = document.querySelector(&apos;main&apos;);</span><br><span class="line">import(`./section-modules/$&#123;someVariable&#125;.js`)</span><br><span class="line">  .then(module =&gt; &#123;</span><br><span class="line">    module.loadPageInto(main);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(err =&gt; &#123;</span><br><span class="line">    main.textContent = err.message;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">//解构赋值</span><br><span class="line">import(&apos;./myModule.js&apos;)</span><br><span class="line">.then((&#123;export1, export2&#125;) =&gt; &#123;</span><br><span class="line">  // ...·</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//同事加载多个模块</span><br><span class="line">Promise.all([</span><br><span class="line">  import(&apos;./module1.js&apos;),</span><br><span class="line">  import(&apos;./module2.js&apos;),</span><br><span class="line">  import(&apos;./module3.js&apos;),</span><br><span class="line">])</span><br><span class="line">.then(([module1, module2, module3]) =&gt; &#123;</span><br><span class="line">   ···</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// async函数</span><br><span class="line">async function main() &#123;</span><br><span class="line">  const myModule = await import(&apos;./myModule.js&apos;);</span><br><span class="line">  const &#123;export1, export2&#125; = await import(&apos;./myModule.js&apos;);</span><br><span class="line">  const [module1, module2, module3] =</span><br><span class="line">    await Promise.all([</span><br><span class="line">      import(&apos;./module1.js&apos;),</span><br><span class="line">      import(&apos;./module2.js&apos;),</span><br><span class="line">      import(&apos;./module3.js&apos;),</span><br><span class="line">    ]);</span><br><span class="line">&#125;</span><br><span class="line">main();</span><br></pre></td></tr></table></figure>
 
 
       
@@ -554,7 +630,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -565,7 +641,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -576,7 +652,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -609,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、let-const"><span class="nav-number">1.</span> <span class="nav-text">一、let/const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let"><span class="nav-number">1.1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const"><span class="nav-number">1.2.</span> <span class="nav-text">const</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、变量的解构赋值"><span class="nav-number">2.</span> <span class="nav-text">二、变量的解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组的解构赋值"><span class="nav-number">2.1.</span> <span class="nav-text">数组的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的结构赋值"><span class="nav-number">2.2.</span> <span class="nav-text">对象的结构赋值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、let-const"><span class="nav-number">1.</span> <span class="nav-text">一、let/const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-let"><span class="nav-number">1.1.</span> <span class="nav-text">1.let</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-const"><span class="nav-number">1.2.</span> <span class="nav-text">2.const</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、变量的解构赋值"><span class="nav-number">2.</span> <span class="nav-text">二、变量的解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数组的解构赋值"><span class="nav-number">2.1.</span> <span class="nav-text">1.数组的解构赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对象的结构赋值"><span class="nav-number">2.2.</span> <span class="nav-text">2.对象的结构赋值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、Module-的语法"><span class="nav-number">3.</span> <span class="nav-text">九、Module 的语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-export"><span class="nav-number">3.1.</span> <span class="nav-text">1.export</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-import"><span class="nav-number">3.2.</span> <span class="nav-text">2.import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-模块的整体加载"><span class="nav-number">3.3.</span> <span class="nav-text">3.模块的整体加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-export-default"><span class="nav-number">3.4.</span> <span class="nav-text">4.export default</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-export-和-import-的复合写法"><span class="nav-number">3.5.</span> <span class="nav-text">5.export 和 import 的复合写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-模块的继承"><span class="nav-number">3.6.</span> <span class="nav-text">6.模块的继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-跨模块常量"><span class="nav-number">3.7.</span> <span class="nav-text">7.跨模块常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-import"><span class="nav-number">3.8.</span> <span class="nav-text">8.import()</span></a></li></ol></li></ol></div>
             
 
           </div>
